@@ -34,18 +34,18 @@ with st.sidebar:
     Ajusta los deslizadores para que coincidan con los parametros del proceso de flotación.
     """)
 
-    # Slider para el caudal de amina (m3/s)
-    flowrate = st.slider(
-        label='Caudal de amina (m³/s)',
+    # Slider para el caudal de amina (kg/s)
+    flowrateAmina = st.slider(
+        label='Caudal de amina (kg/s)',
         min_value= 241.70,
         max_value= 739.30,
-        value= 488.43 , # Valor inicial
+        value= 300 , # Valor inicial
         step=1
     )
     st.caption("El flujo de amina es una de las variables más críticas, porque controla la selectividad y la eficiencia de la separación entre sílica y hierro")
 
     # Slider para el caudal del aire en la columna 1
-    temperature = st.slider(
+    flowrateAir = st.slider(
         label='Flujo de aire que ingresa a la columna 1 (m³/s)',
         min_value= 175.85,
         max_value= 372.44,
@@ -55,7 +55,7 @@ with st.sidebar:
     st.caption("El flujo del aire es una de las variables operativas más importantes, porque controla la formación, cantidad y tamaño de burbujas, que se encarga del transporte de las partículas sílice")
 
     # Slider para el % de concentración de hierro
-    pressure = st.slider(
+    IronConcentrate = st.slider(
         label='Concentración de Hierro (%)',
         min_value= 62.51,
         max_value= 68.01,
@@ -84,7 +84,7 @@ if model is not None:
         # ¡Es crucial que los nombres de las columnas coincidan exactamente con los que el modelo espera!
         df_input = pd.DataFrame({
             'Amina Flow': [flowrateAmina],
-            'Flotation Column 01 Air Flow': [flowrate],
+            'Flotation Column 01 Air Flow': [flowrateAir],
             '% Iron Concentrate': [IronConcentrate]
         })
 
