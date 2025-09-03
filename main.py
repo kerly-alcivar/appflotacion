@@ -37,8 +37,8 @@ with st.sidebar:
     # Slider para el caudal de amina (m3/s)
     flowrateAmina = st.slider(
         label='Caudal de amina (m³/s)',
-        min_value= 241.70,
-        max_value= 739.30,
+        min_value= 241,
+        max_value= 739,
         value= 300 , # Valor inicial
         step=1
     )
@@ -47,8 +47,8 @@ with st.sidebar:
     # Slider para el caudal del aire en la columna 1
     flowrateAir = st.slider(
         label='Flujo de aire que ingresa a la columna 1 (m³/s)',
-        min_value= 175.85,
-        max_value= 372.44,
+        min_value= 175,
+        max_value= 372,
         value= 180,
         step=1
     )
@@ -57,9 +57,9 @@ with st.sidebar:
     # Slider para el % de concentración de hierro
     IronConcentrate = st.slider(
         label='Concentración de Hierro (%)',
-        min_value= 62.51,
-        max_value= 68.01,
-        value=0,
+        min_value= 62,
+        max_value= 68,
+        value=63,
         step=1
     )
     st.caption("El % de hierro en el concentrado está inversamente relacionado con la calidad de la sílice")
